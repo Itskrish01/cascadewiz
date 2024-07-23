@@ -66,7 +66,7 @@ export default function FlexBoxGuide() {
       <div className="mt-10">
         <Label className="font-bold text-lg blueDark-text">Align Items</Label>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2">
-          <div className="flex-1 bg-gray-50 border border-gray-200 w-full p-3 rounded-xl">
+          <div className="flex-1 bg-gray-50 border border-gray-200 md:h-auto h-80 w-full p-3 rounded-xl">
             <div
               className={cn(
                 "flex gap-2 text-white transition-all h-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg",
@@ -111,7 +111,7 @@ export default function FlexBoxGuide() {
           Flex Direction
         </Label>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2">
-          <div className="flex-1 bg-gray-50 border border-gray-200 w-full p-3 rounded-xl">
+          <div className="flex-1 bg-gray-50 border border-gray-200 md:h-auto h-80 w-full p-3 rounded-xl">
             <div
               className={cn(
                 "flex gap-2 text-white transition-all h-full w-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg",
@@ -154,7 +154,7 @@ export default function FlexBoxGuide() {
       <div className="mt-10">
         <Label className="font-bold text-lg blueDark-text">Align Content</Label>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2">
-          <div className="flex-1 bg-gray-50 border border-gray-200  w-full p-3 rounded-xl">
+          <div className="flex-1 bg-gray-50 border border-gray-200 md:h-auto h-80 w-full p-3 rounded-xl">
             <div
               className={cn(
                 "flex flex-wrap gap-2 text-white h-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg",
@@ -197,7 +197,7 @@ export default function FlexBoxGuide() {
       <div className="mt-10">
         <Label className="font-bold text-lg blueDark-text">Align Self</Label>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 mt-2">
-          <div className="flex-1 bg-gray-50 border border-gray-200  w-full p-3 rounded-xl">
+          <div className="flex-1 bg-gray-50 border border-gray-200 md:h-auto h-80 w-full p-3 rounded-xl">
             <div
               className={cn(
                 "flex items-start gap-2 text-white h-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg"
