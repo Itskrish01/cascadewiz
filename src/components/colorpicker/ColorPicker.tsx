@@ -15,7 +15,7 @@ export function ColorPicker(props: {
       <PopoverTrigger asChild>
         <Input type="text" value={props.color} placeholder="#ffffff" />
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="p-0 w-auto">
         <ChromePicker color={props.color} onChange={props.onChange} />
       </PopoverContent>
     </Popover>

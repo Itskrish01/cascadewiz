@@ -10,7 +10,7 @@ const NavCard = (item: {
   return (
     <Link
       to={item.href}
-      className="overflow-hidden rounded-lg border shadow border-gray-100 group cursor-pointer"
+      className="overflow-hidden rounded-lg border transition-all duration-300 hover:shadow-lg shadow border-gray-100 group cursor-pointer"
     >
       <div className=" border-b border-gray-900/5 bg-gray-50 p-6">
         <div className="text-2xl group-hover:text-orange-500 text-gray-600 transition-all duration-300">

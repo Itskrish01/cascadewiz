@@ -54,7 +54,7 @@ const Glassmorphism = () => {
 
   return (
     <div>
-      <div className="flex md:flex-row flex-col md:gap-10 gap-5 ">
+      <div className="flex md:flex-row flex-col md:gap-10 gap-5">
         <div className="flex-[0.5] h-full">
           <Preview
             backgroundImage={defaultGlassMorphism.backgroundImage}

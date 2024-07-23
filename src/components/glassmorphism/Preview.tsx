@@ -63,7 +63,7 @@ const Preview = (props: Props) => {
               )}
             >
               <MailIcon className="w-4 h-4" />
-              <span className="">leroy.jenkins@company.com</span>
+              <span className=" break-words">leroy.jenkins@company.com</span>
             </span>
             <span
               className={cn(
