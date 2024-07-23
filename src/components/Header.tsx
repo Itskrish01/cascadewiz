@@ -3,7 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { BoxIcon } from "lucide-react";
+import { BoxesIcon, BoxIcon } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const products = [
@@ -13,6 +13,13 @@ const products = [
       "Generate cool Glassmorphism design for your own websites or web apps",
     href: "/css-glassmorphism",
     icon: BoxIcon,
+  },
+  {
+    name: "FlexBox Guide",
+    description:
+      "Learn how flexbox works with its different properties, visually",
+    href: "/css-flexbox-guide",
+    icon: BoxesIcon,
   },
 ];
 
