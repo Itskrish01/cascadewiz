@@ -94,7 +94,13 @@ const GlitchTextEffect = () => {
       </h3>
       <div className="flex items-center gap-3 mt-20 md:grid-cols-3">
         <div className="w-full">
-          <Label>Text Color</Label>
+          <div className="flex items-center gap-2 mb-2">
+            <Label>Text Color</Label>
+            <div
+              className="h-4 w-4 rounded border border-gray-200"
+              style={{ backgroundColor: textColor }}
+            ></div>
+          </div>
           <ColorPicker
             color={textColor}
             onChange={(color) => setTextColor(color.hex)}
@@ -125,21 +131,39 @@ const GlitchTextEffect = () => {
       </div>
       <div className="flex items-center gap-3 mt-10 md:grid-cols-3">
         <div className="w-full">
-          <Label>Bg Color</Label>
+          <div className="flex items-center gap-2 mb-2">
+            <Label>Bg Color</Label>
+            <div
+              className="h-4 w-4 rounded border border-gray-200"
+              style={{ backgroundColor: backgroundColor }}
+            ></div>
+          </div>
           <ColorPicker
             color={backgroundColor}
             onChange={(color) => setBackgroundColor(color.hex)}
           />
         </div>
         <div className="w-full">
-          <Label>Glitch Color 1</Label>
+          <div className="flex items-center gap-2 mb-2">
+            <Label>Glitch Color 1</Label>
+            <div
+              className="h-4 w-4 rounded border border-gray-200"
+              style={{ backgroundColor: glitchColor1 }}
+            ></div>
+          </div>
           <ColorPicker
             color={glitchColor1}
             onChange={(color) => setGlitchColor1(color.hex)}
           />
         </div>
         <div className="w-full">
-          <Label>Glitch Color 2</Label>
+          <div className="flex items-center gap-2 mb-2">
+            <Label>Glitch Color 2</Label>
+            <div
+              className="h-4 w-4 rounded border border-gray-200"
+              style={{ backgroundColor: glitchColor2 }}
+            ></div>
+          </div>
           <ColorPicker
             color={glitchColor2}
             onChange={(color) => setGlitchColor2(color.hex)}
@@ -150,8 +174,8 @@ const GlitchTextEffect = () => {
         <CopyBlock
           theme={dracula}
           language="html"
-          text={`<div className="glitch-wrapper">
-    <div className="glitch" data-glitch="${glitchedText}">
+          text={`<div class="glitch-wrapper">
+    <div class="glitch" data-glitch="${glitchedText}">
         ${glitchedText}
     </div>
 </div>
