@@ -18,7 +18,7 @@ const GlitchTextEffect = () => {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-      .glitch-wrapper {
+      .container-glitch {
             width: 100%;
             height: 300px;
             display: flex;
@@ -124,7 +124,7 @@ const GlitchTextEffect = () => {
           />
         </div>
       </div>
-      <div className="mt-4 glitch-wrapper rounded-lg overflow-hidden">
+      <div className="mt-4 container-glitch rounded-lg overflow-hidden">
         <div className="glitch" data-glitch={glitchedText}>
           {glitchedText}
         </div>
@@ -174,14 +174,14 @@ const GlitchTextEffect = () => {
         <CopyBlock
           theme={dracula}
           language="html"
-          text={`<div class="glitch-wrapper">
+          text={`<div class="container-glitch">
     <div class="glitch" data-glitch="${glitchedText}">
         ${glitchedText}
     </div>
 </div>
         
 <style>
-    .glitch-wrapper {
+    .container-glitch {
         width: 100%;
         height: 300px;
         display: flex;
