@@ -3,7 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { BoxesIcon, BoxIcon } from "lucide-react";
+import { BoxesIcon, BoxIcon, Text } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const products = [
@@ -20,6 +20,12 @@ const products = [
       "Learn how flexbox works with its different properties, visually",
     href: "/css-flexbox-guide",
     icon: BoxesIcon,
+  },
+  {
+    name: "Glitch Text Effect",
+    description: "Generate a very cool glitch text effect with HTML and CSS",
+    href: "/css-glitch-text-effect",
+    icon: Text,
   },
 ];
 

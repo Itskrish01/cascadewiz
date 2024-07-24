@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Glassmorphism from "./pages/Glassmorphism";
 import FlexBoxGuide from "./pages/flex-box-guide";
+import GlitchTextEffect from "./pages/glitch-text";
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/css-glassmorphism" element={<Glassmorphism />} />
         <Route path="/css-flexbox-guide" element={<FlexBoxGuide />} />
+        <Route path="/css-glitch-text-effect" element={<GlitchTextEffect />} />
       </Route>
     </Routes>
   );

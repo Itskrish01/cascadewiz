@@ -18,7 +18,10 @@ export default function FlexBoxGuide() {
 
   return (
     <>
-      <div>
+      <h3 className="blueDark-text text-3xl font-semibold">
+        Flexbox visual Guide
+      </h3>
+      <div className="mt-16">
         <Label className="font-bold text-lg blueDark-text">
           Justify content
         </Label>
@@ -26,7 +29,7 @@ export default function FlexBoxGuide() {
           <div className="flex-1 bg-gray-50 border border-gray-200 w-full p-3 rounded-xl">
             <div
               className={cn(
-                "flex gap-2 text-white transition-all h-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg",
+                "flex gap-2 text-white transition-all transform h-full duration-300 text-sm font-bold font-mono leading-6 rounded-lg",
                 justifyContent
               )}
             >
@@ -208,7 +211,7 @@ export default function FlexBoxGuide() {
               </div>
               <div
                 className={cn(
-                  "p-4 w-full rounded-lg flex items-center justify-center bg-orange-500",
+                  "p-4 w-full rounded-lg flex items-center justify-center bg-blue-500",
                   alignSelf
                 )}
               >
