@@ -12,6 +12,7 @@ const GlitchTextEffect = () => {
   const [backgroundColor, setBackgroundColor] = useState<string>("#000000");
   const [glitchColor1, setGlitchColor1] = useState<string>("#c2ff00");
   const [glitchColor2, setGlitchColor2] = useState<string>("#ff00ff");
+  const [animationDuration, setAnimationDuration] = useState(3);
 
   return (
     <>
@@ -50,13 +51,17 @@ const GlitchTextEffect = () => {
         }
 
         .glitch:before {
-            animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+            animation: glitch-color ${(0.1 * animationDuration).toFixed(
+              1
+            )}s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
             color: ${glitchColor1};
             z-index: -1;
         }
 
         .glitch:after {
-            animation: glitch-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+            animation: glitch-color ${
+              ((0.1 * animationDuration).toFixed(1) as unknown as number) - 0.1
+            }s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
             color: ${glitchColor2};
             z-index: -2;
         }
@@ -101,10 +106,7 @@ const GlitchTextEffect = () => {
               style={{ backgroundColor: textColor }}
             ></div>
           </div>
-          <ColorPicker
-            color={textColor}
-            onChange={(color) => setTextColor(color.hex)}
-          />
+          <ColorPicker color={textColor} onChange={setTextColor} />
         </div>
         <div className="w-full">
           <Label>Text</Label>
@@ -129,7 +131,7 @@ const GlitchTextEffect = () => {
           {glitchedText}
         </div>
       </div>
-      <div className="flex items-center gap-3 mt-10 md:grid-cols-3">
+      <div className="flex md:flex-row flex-col items-center gap-5 mt-10">
         <div className="w-full">
           <div className="flex items-center gap-2 mb-2">
             <Label>Bg Color</Label>
@@ -138,10 +140,7 @@ const GlitchTextEffect = () => {
               style={{ backgroundColor: backgroundColor }}
             ></div>
           </div>
-          <ColorPicker
-            color={backgroundColor}
-            onChange={(color) => setBackgroundColor(color.hex)}
-          />
+          <ColorPicker color={backgroundColor} onChange={setBackgroundColor} />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-2 mb-2">
@@ -151,10 +150,7 @@ const GlitchTextEffect = () => {
               style={{ backgroundColor: glitchColor1 }}
             ></div>
           </div>
-          <ColorPicker
-            color={glitchColor1}
-            onChange={(color) => setGlitchColor1(color.hex)}
-          />
+          <ColorPicker color={glitchColor1} onChange={setGlitchColor1} />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-2 mb-2">
@@ -164,9 +160,16 @@ const GlitchTextEffect = () => {
               style={{ backgroundColor: glitchColor2 }}
             ></div>
           </div>
-          <ColorPicker
-            color={glitchColor2}
-            onChange={(color) => setGlitchColor2(color.hex)}
+          <ColorPicker color={glitchColor2} onChange={setGlitchColor2} />
+        </div>
+        <div className="w-full">
+          <Label>Duration: {(0.1 * animationDuration).toFixed(1)}s</Label>
+          <Slider
+            className="mt-2"
+            max={20}
+            min={1}
+            value={[animationDuration]}
+            onValueChange={(value) => setAnimationDuration(value[0])}
           />
         </div>
       </div>
@@ -213,13 +216,17 @@ const GlitchTextEffect = () => {
     }
 
     .glitch:before {
-        animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        animation: glitch-color ${(0.1 * animationDuration).toFixed(
+          1
+        )}s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
         color: ${glitchColor1};
         z-index: -1;
     }
 
     .glitch:after {
-        animation: glitch-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        animation: glitch-color ${
+          ((0.1 * animationDuration).toFixed(1) as unknown as number) - 0.1
+        }s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
         color: ${glitchColor2};
         z-index: -2;
     }

@@ -72,10 +72,10 @@ const Glassmorphism = () => {
           <Label>color</Label>
           <ColorPicker
             color={defaultGlassMorphism.color}
-            onChange={(color) =>
+            onChange={(color: string) =>
               setDefaultGlassMorphism((prev: GlassMorphism) => ({
                 ...prev,
-                color: color.hex,
+                color: color,
               }))
             }
           />
