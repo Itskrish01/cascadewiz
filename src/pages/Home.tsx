@@ -1,12 +1,19 @@
 import NavCard from "@/components/NavCard";
 import HeroSection from "@/sections/HeroSection";
-import { BoxesIcon, BoxIcon } from "lucide-react";
+import { BoxesIcon, BoxIcon, BoxSelect } from "lucide-react";
+import { useRef } from "react";
 
 const Home = () => {
+  const toolRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = () => {
+    toolRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <HeroSection />
-      <div className="mt-20" id="tools">
+      <HeroSection handleClick={handleClick} />
+      <div className="mt-20" ref={toolRef}>
         <h4 className="font-bold text-3xl blueDark-text">CSS Tools</h4>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-4">
           <NavCard
@@ -45,6 +52,12 @@ const Home = () => {
               </svg>
             }
             href="/css-glitch-text-effect"
+          />
+          <NavCard
+            name="Box Shadow"
+            description="Generate cool box shadow effects for your own websites or web apps"
+            icon={<BoxSelect className="h-14 w-14 " />}
+            href="/css-box-shadow"
           />
         </div>
       </div>

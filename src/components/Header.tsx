@@ -3,7 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { BoxesIcon, BoxIcon, Text } from "lucide-react";
+import { BoxesIcon, BoxIcon, BoxSelect, Text } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const products = [
@@ -26,6 +26,13 @@ const products = [
     description: "Generate a very cool glitch text effect with HTML and CSS",
     href: "/css-glitch-text-effect",
     icon: Text,
+  },
+  {
+    name: "Box Shadow",
+    description:
+      "Generate cool box shadow effects for your own websites or web apps",
+    href: "/css-box-shadow",
+    icon: BoxSelect,
   },
 ];
 
@@ -57,14 +64,14 @@ export default function Header() {
         <div className="hidden items-center lg:flex lg:gap-x-12">
           <Popover>
             <PopoverTrigger className="flex items-center gap-x-1 font-semibold leading-6 text-gray-900">
-              Product
+              Tools
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
               />
             </PopoverTrigger>
 
-            <PopoverContent className="w-[500px]">
+            <PopoverContent className="w-[500px] rounded-2xl p-1">
               <div className="">
                 {products.map((item) => (
                   <div
