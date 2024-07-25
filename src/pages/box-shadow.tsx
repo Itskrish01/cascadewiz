@@ -28,7 +28,10 @@ const BoxShadowTool = () => {
     },
   ]);
 
-  const updateShadow = (index: number, newShadow) => {
+  const updateShadow = (
+    index: number,
+    newShadow: { [key: string]: unknown }
+  ) => {
     setShadows((prevShadows) => {
       const updatedShadows = [...prevShadows];
       updatedShadows[index] = { ...updatedShadows[index], ...newShadow };
@@ -129,7 +132,7 @@ const BoxShadowTool = () => {
               <Label>Add Box Shadows</Label>
             </div>
             <div className="flex flex-wrap gap-2">
-              {shadows.map((shadow, index) => {
+              {shadows.map((_, index) => {
                 return (
                   <div
                     key={index}
