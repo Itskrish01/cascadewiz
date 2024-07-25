@@ -224,9 +224,9 @@ const GlitchTextEffect = () => {
     }
 
     .glitch:after {
-        animation: glitch-color ${
-          ((0.1 * animationDuration).toFixed(1) as unknown as number) - 0.1
-        }s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        animation: glitch-color ${(0.1 * animationDuration - 0.1).toFixed(
+          1
+        )}s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
         color: ${glitchColor2};
         z-index: -2;
     }
