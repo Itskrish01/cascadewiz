@@ -16,6 +16,8 @@ const shadowShapesType = [
 const BoxShadowTool = () => {
   const [shadowShape, setShadowShape] = useState(shadowShapesType[0]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [backgroundColor, setBackgroundColor] = useState("#dedede");
+  const [shapeColor, setShapeColor] = useState("#ffffff");
   const [shadows, setShadows] = useState([
     {
       color: "#000000",
@@ -86,7 +88,7 @@ const BoxShadowTool = () => {
   }, [shadows]);
 
   const generateCssCode = (shapeClass: string) => `.${shapeClass} {
-    background-color: #ff9300;
+    background-color: ${shapeColor};
     box-shadow: ${shadowsCode.join(", ")};
     ${
       shapeClass === "square"
@@ -104,7 +106,10 @@ const BoxShadowTool = () => {
       <style dangerouslySetInnerHTML={{ __html: activeShapeCssCode }} />
       <h3 className="blueDark-text text-3xl font-semibold">CSS Box Shadow</h3>
       <div className="mt-16 flex md:flex-row flex-col gap-5 items-center">
-        <div className="border md:flex-1 flex items-center justify-center border-gray-300 bg-[#e0e0e0] rounded-2xl h-[600px] w-full relative overflow-hidden">
+        <div
+          style={{ backgroundColor }}
+          className="border md:flex-1 flex items-center justify-center border-gray-300 rounded-2xl h-[600px] w-full relative overflow-hidden"
+        >
           <div className={shadowShape.shape}></div>
         </div>
         <div className="md:flex-1 w-full">
@@ -174,18 +179,48 @@ const BoxShadowTool = () => {
               </button>
             </div>
           </div>
-          <div className="mt-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Label>Shadow Color</Label>
-              <div
-                className="h-4 w-4 rounded border border-gray-200"
-                style={{ backgroundColor: shadows[activeIndex].color }}
-              ></div>
+          <div className="mt-6 flex items-center gap-3">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Label>Shadow Color</Label>
+                <div
+                  className="h-4 w-4 rounded border border-gray-200"
+                  style={{ backgroundColor: shadows[activeIndex].color }}
+                ></div>
+              </div>
+              <ColorPicker
+                color={shadows[activeIndex].color}
+                onChange={(color: string) =>
+                  updateShadow(activeIndex, { color })
+                }
+              />
             </div>
-            <ColorPicker
-              color={shadows[activeIndex].color}
-              onChange={(color: string) => updateShadow(activeIndex, { color })}
-            />
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Label>background Color</Label>
+                <div
+                  className="h-4 w-4 rounded border border-gray-200"
+                  style={{ backgroundColor: backgroundColor }}
+                ></div>
+              </div>
+              <ColorPicker
+                color={backgroundColor}
+                onChange={(color: string) => setBackgroundColor(color)}
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Label>Shape Color</Label>
+                <div
+                  className="h-4 w-4 rounded border border-gray-200"
+                  style={{ backgroundColor: shapeColor }}
+                ></div>
+              </div>
+              <ColorPicker
+                color={backgroundColor}
+                onChange={(color: string) => setShapeColor(color)}
+              />
+            </div>
           </div>
           <SliderComponent
             label="Opacity"
