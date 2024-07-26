@@ -213,6 +213,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       to={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
