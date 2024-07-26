@@ -11,3 +11,10 @@ body {
 .blueDark-text {
   color: #24264b;
 }
+
+code {
+  font-size: 14px;
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 5px;
+}

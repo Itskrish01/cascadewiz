@@ -1,5 +1,6 @@
 import NavCard from "@/components/NavCard";
 import HeroSection from "@/sections/HeroSection";
+import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 import { BoxesIcon, BoxIcon, BoxSelect } from "lucide-react";
 import { useRef } from "react";
 
@@ -58,6 +59,24 @@ const Home = () => {
             description="Generate cool box shadow effects for your own websites or web apps"
             icon={<BoxSelect className="h-14 w-14 " />}
             href="/css-box-shadow"
+          />
+        </div>
+      </div>
+      <div className="mt-20">
+        <h4 className="font-bold text-3xl blueDark-text">CSS Guide</h4>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-4">
+          <NavCard
+            name="Flex Box Guide"
+            description="Learn how flex box works with its different properties, visually."
+            icon={<BoxesIcon className="h-14 w-14 " />}
+            href="/css-flexbox-guide"
+          />
+
+          <NavCard
+            name="Cursor Guide"
+            description="Learn how to use different cursor types in CSS"
+            icon={<CursorArrowRaysIcon className="h-14 w-14 " />}
+            href="/css-cursor-guide"
           />
         </div>
       </div>

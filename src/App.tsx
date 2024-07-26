@@ -5,6 +5,7 @@ import Glassmorphism from "./pages/Glassmorphism";
 import FlexBoxGuide from "./pages/flex-box-guide";
 import GlitchTextEffect from "./pages/glitch-text";
 import BoxShadowTool from "./pages/box-shadow";
+import CursorCSSGuide from "./pages/cursor-guide";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/css-flexbox-guide" element={<FlexBoxGuide />} />
         <Route path="/css-glitch-text-effect" element={<GlitchTextEffect />} />
         <Route path="/css-box-shadow" element={<BoxShadowTool />} />
+        <Route path="/css-cursor-guide" element={<CursorCSSGuide />} />
       </Route>
     </Routes>
   );

@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  CursorArrowRaysIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { BoxesIcon, BoxIcon, BoxSelect, Text } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
-const products = [
+const tools = [
   {
     name: "Glassmorphism",
     description:
@@ -14,13 +18,7 @@ const products = [
     href: "/css-glassmorphism",
     icon: BoxIcon,
   },
-  {
-    name: "FlexBox Guide",
-    description:
-      "Learn how flexbox works with its different properties, visually",
-    href: "/css-flexbox-guide",
-    icon: BoxesIcon,
-  },
+
   {
     name: "Glitch Text Effect",
     description: "Generate a very cool glitch text effect with HTML and CSS",
@@ -33,6 +31,22 @@ const products = [
       "Generate cool box shadow effects for your own websites or web apps",
     href: "/css-box-shadow",
     icon: BoxSelect,
+  },
+];
+
+const guides = [
+  {
+    name: "FlexBox Guide",
+    description:
+      "Learn how flexbox works with its different properties, visually",
+    href: "/css-flexbox-guide",
+    icon: BoxesIcon,
+  },
+  {
+    name: "Cursors Guide",
+    description: "Learn how to use different cursor types in CSS",
+    href: "/css-cursor-guide",
+    icon: CursorArrowRaysIcon,
   },
 ];
 
@@ -73,7 +87,44 @@ export default function Header() {
 
             <PopoverContent className="w-[500px] rounded-2xl p-1">
               <div className="">
-                {products.map((item) => (
+                {tools.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex gap-x-6 rounded-lg p-4   leading-6 hover:bg-gray-50"
+                  >
+                    <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <item.icon
+                        className="h-6 w-6 text-gray-600 group-hover:text-orange-600"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="flex-auto">
+                      <Link
+                        to={item.href}
+                        className="block font-semibold text-gray-900"
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </Link>
+                      <p className="mt-1 text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
+          <Popover>
+            <PopoverTrigger className="flex items-center gap-x-1 font-semibold leading-6 text-gray-900">
+              Guide
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
+            </PopoverTrigger>
+
+            <PopoverContent className="w-[500px] rounded-2xl p-1">
+              <div className="">
+                {guides.map((item) => (
                   <div
                     key={item.name}
                     className="group relative flex gap-x-6 rounded-lg p-4   leading-6 hover:bg-gray-50"
@@ -146,7 +197,22 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {products.map((item) => (
+                  {tools.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <item.icon
+                          className="h-6 w-6 text-gray-600 group-hover:text-orange-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      {item.name}
+                    </Link>
+                  ))}
+                  {guides.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
