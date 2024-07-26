@@ -38,7 +38,7 @@ const CursorCSSGuide = () => {
               <div className="cursor-guide">
                 <code>{item.label}</code>
               </div>
-              <HoverCard>
+              <HoverCard openDelay={0.2}>
                 <HoverCardTrigger asChild>
                   <Info className="w-5 h-5 text-zinc-400 hover:text-gray-900 transition-all" />
                 </HoverCardTrigger>
