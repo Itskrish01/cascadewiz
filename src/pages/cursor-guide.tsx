@@ -15,7 +15,7 @@ const CursorCSSGuide = () => {
           images and a mandatory keyword as a final fallback.
         </p>
       </div>
-      <div className="mt-16">
+      <div className="mt-16 cursor-guide">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 w-full gap-5 mt-2">
           <div className="flex-1 bg-gray-50 cursor-pointer select-none border border-gray-200 w-full p-3 rounded-xl">
             <code>cursor: pointer;</code>

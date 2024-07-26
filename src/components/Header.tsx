@@ -9,6 +9,13 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { BoxesIcon, BoxIcon, BoxSelect, Text } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const tools = [
   {
@@ -76,19 +83,24 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden items-center lg:flex lg:gap-x-12">
-          <Popover>
-            <PopoverTrigger className="flex items-center gap-x-1 font-semibold leading-6 text-gray-900">
-              Tools
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </PopoverTrigger>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className="flex items-center gap-x-1 cursor-pointer font-semibold leading-6 text-gray-900"
+              asChild
+            >
+              <div className="flex items-center gap-x-1">
+                Tools
+                <ChevronDownIcon
+                  className="h-5 w-5 flex-none text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+            </DropdownMenuTrigger>
 
-            <PopoverContent className="w-[500px] rounded-2xl p-1">
-              <div className="">
+            <DropdownMenuContent className="w-[500px] rounded-2xl p-1">
+              <DropdownMenuGroup>
                 {tools.map((item) => (
-                  <div
+                  <DropdownMenuItem
                     key={item.name}
                     className="group relative flex gap-x-6 rounded-lg p-4   leading-6 hover:bg-gray-50"
                   >
@@ -108,11 +120,11 @@ export default function Header() {
                       </Link>
                       <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
-                  </div>
+                  </DropdownMenuItem>
                 ))}
-              </div>
-            </PopoverContent>
-          </Popover>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Popover>
             <PopoverTrigger className="flex items-center gap-x-1 font-semibold leading-6 text-gray-900">
               Guide
