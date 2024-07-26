@@ -143,6 +143,7 @@ const Glassmorphism = () => {
       <div className="mt-5">
         <CopyBlock
           theme={dracula}
+          wrapLongLines
           language="css"
           text={`.box {
     background: rgba(${hexToRgb(defaultGlassMorphism.color)!.r!}, ${hexToRgb(

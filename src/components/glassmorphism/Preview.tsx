@@ -13,7 +13,7 @@ type Props = {
 const Preview = (props: Props) => {
   return (
     <div
-      className="relative w-full border border-gray-200 rounded-lg p-16 overflow-hidden"
+      className="relative w-full border border-gray-200 rounded-lg p-8 md:p-16 overflow-hidden"
       style={{
         backgroundImage: `url(${props.backgroundImage})`,
         backgroundRepeat: "no-repeat",
