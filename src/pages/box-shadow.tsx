@@ -227,7 +227,7 @@ const BoxShadowTool = () => {
             value={shadows[activeIndex].opacity}
             max={1}
             min={0}
-            step={0.1}
+            step={0.01}
             onValueChange={(value) =>
               updateShadow(activeIndex, { opacity: value })
             }

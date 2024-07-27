@@ -108,7 +108,7 @@ const Glassmorphism = () => {
               defaultValue={[parseFloat(defaultGlassMorphism.opacity)]}
               max={1}
               min={0}
-              step={0.1}
+              step={0.01}
               onValueChange={(value) => {
                 setDefaultGlassMorphism((prev: GlassMorphism) => ({
                   ...prev,
