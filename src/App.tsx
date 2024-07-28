@@ -6,6 +6,7 @@ import FlexBoxGuide from "./pages/flex-box-guide";
 import GlitchTextEffect from "./pages/glitch-text";
 import BoxShadowTool from "./pages/box-shadow";
 import CursorCSSGuide from "./pages/cursor-guide";
+import ButtonBuilder from "./pages/button-builder";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/css-glitch-text-effect" element={<GlitchTextEffect />} />
         <Route path="/css-box-shadow" element={<BoxShadowTool />} />
         <Route path="/css-cursor-guide" element={<CursorCSSGuide />} />
+        <Route path="/button-builder" element={<ButtonBuilder />} />
       </Route>
     </Routes>
   );
