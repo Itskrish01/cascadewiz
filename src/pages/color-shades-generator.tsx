@@ -70,7 +70,35 @@ const ColorShadesGenerator: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex w-full gap-2">
+        <div className="mt-10 w-full gap-2 md:hidden block space-y-1">
+          {shades.map((shade, index) => (
+            <div
+              key={index}
+              onClick={() => setSelectedColor(shade)}
+              className="w-full relative flex overflow-hidden cursor-pointer group transition-all duration-300"
+            >
+              <button
+                onClick={() => {
+                  navigator.clipboard
+                    .writeText(shade)
+                    .then(() => toast.success("Copied to clipboard"));
+                }}
+                className="absolute bg-orange-500 p-2 active:scale-75 rounded-xl group-hover:translate-y-0.5 -translate-y-10 duration-300 ease-in-out left-1/2 -translate-x-1/2"
+              >
+                <Copy className="h-5 w-5 text-white" />
+              </button>
+              <div
+                className="h-10 w-full  border border-gray-300"
+                style={{ backgroundColor: shade }}
+              ></div>
+              <div className="flex items-center w-full justify-center text-center py-1 text-sm text-zinc-600 border border-gray-300">
+                <p>{shade}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 w-full gap-2 md:flex hidden">
           {shades.map((shade, index) => (
             <div
               key={index}
@@ -96,6 +124,20 @@ const ColorShadesGenerator: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 w-full flex items-center justify-center">
+          <button
+            onClick={() =>
+              navigator.clipboard
+                .writeText(shades.join(", "))
+                .then(() => toast.success("Copied to clipboard"))
+            }
+            className="px-6 py-4 inline-flex active:scale-95 transition-all duration-300 items-center gap-2 text-white font-semibold bg-orange-400 rounded-full "
+          >
+            Copy all shades
+            <Copy className="h-5 w-5 text-white" />
+          </button>
         </div>
 
         <div className="flex items-center justify-between mt-20">
