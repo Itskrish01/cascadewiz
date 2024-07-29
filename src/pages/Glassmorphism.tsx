@@ -7,6 +7,7 @@ import { hexToRgb, rgbToHex } from "@/lib/utils";
 import { Shuffle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { Helmet } from "react-helmet";
 
 interface GlassMorphism {
   backgroundImage: string;
@@ -54,6 +55,16 @@ const Glassmorphism = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta property="og:title" content="Glassmorphism Tool" />
+        <meta
+          property="og:description"
+          content="Generate cool Glassmorphism design for your own websites or web apps"
+        />
+        <meta property="og:site_name" content="cascadeWiz" />
+        <meta name="twitter:url" content={window.location.href} />
+        <title>Glassmorphism Tool</title>
+      </Helmet>
       <h3 className="blueDark-text text-3xl font-semibold">
         Glassmorphism CSS
       </h3>

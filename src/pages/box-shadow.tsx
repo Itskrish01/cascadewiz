@@ -6,6 +6,7 @@ import { cn, hexToRgb } from "@/lib/utils";
 import { Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { Helmet } from "react-helmet";
 
 const shadowShapesType = [
   { shape: "square", label: "Square" },
@@ -103,6 +104,26 @@ const BoxShadowTool = () => {
 
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content="Box Shadow Tool" />
+        <meta
+          property="og:description"
+          content="Generate cool box shadow effects for your own websites or web apps"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Box Shadow Tool" />
+        <meta
+          name="twitter:description"
+          content="Generate cool box shadow effects for your own websites or web apps"
+        />
+        <meta name="twitter:image" content="/box-shadow-tool.png" />
+        <meta
+          name="twitter:url"
+          content="https://cascadwiz.netlify.app/box-shadow-tool"
+        />
+        <title>Box Shadow Tool</title>
+        <meta property="og:title" content="CascadeWiz" />
+      </Helmet>
       <style dangerouslySetInnerHTML={{ __html: activeShapeCssCode }} />
       <h3 className="blueDark-text text-3xl font-semibold">CSS Box Shadow</h3>
       <div className="mt-16 flex md:flex-row flex-col gap-5 items-center">

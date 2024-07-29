@@ -8,6 +8,7 @@ import {
 } from "@/data/classes";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 export default function FlexBoxGuide() {
   const [justifyContent, setJustifyContent] = useState("justify-start");
@@ -18,6 +19,16 @@ export default function FlexBoxGuide() {
 
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content="Flexbox visual Guide" />
+        <meta
+          property="og:description"
+          content="Learn how flex box works with its different properties, visually."
+        />
+        <meta property="og:site_name" content="cascadeWiz" />
+        <meta name="twitter:url" content={window.location.href} />
+        <title>Flex Box Guide</title>
+      </Helmet>
       <h3 className="blueDark-text text-3xl font-semibold">
         Flexbox visual Guide
       </h3>

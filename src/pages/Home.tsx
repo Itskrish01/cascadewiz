@@ -3,6 +3,7 @@ import HeroSection from "@/sections/HeroSection";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 import { BoxesIcon, BoxIcon, BoxSelect } from "lucide-react";
 import { useRef } from "react";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const toolRef = useRef<HTMLDivElement>(null);
@@ -13,6 +14,26 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content="CascadeWiz" />
+        <meta
+          property="og:description"
+          content=" Unleash Your Imagination with CascadeWiz, and Build amazing css
+  designs."
+        />
+        <meta property="og:image" content="/preview.png" />
+        <meta property="og:site_name" content="cascadeWiz" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CascadeWiz" />
+        <meta
+          name="twitter:description"
+          content="Unleash Your Imagination with CascadeWiz, and Build amazing css
+  designs."
+        />
+        <meta name="twitter:image" content="/preview.png" />
+        <meta name="twitter:url" content="https://cascadwiz.netlify.app/" />
+        <title>CascadeWiz</title>
+      </Helmet>
       <HeroSection handleClick={handleClick} />
       <div className="mt-20" ref={toolRef}>
         <h4 className="font-bold text-3xl blueDark-text">CSS Tools</h4>

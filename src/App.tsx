@@ -6,7 +6,8 @@ import FlexBoxGuide from "./pages/flex-box-guide";
 import GlitchTextEffect from "./pages/glitch-text";
 import BoxShadowTool from "./pages/box-shadow";
 import CursorCSSGuide from "./pages/cursor-guide";
-import ButtonBuilder from "./pages/button-builder";
+import NotFound from "./pages/404";
+import ColorShadesGenerator from "./pages/color-shades-generator";
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,12 @@ const App: React.FC = () => {
         <Route path="/css-glitch-text-effect" element={<GlitchTextEffect />} />
         <Route path="/css-box-shadow" element={<BoxShadowTool />} />
         <Route path="/css-cursor-guide" element={<CursorCSSGuide />} />
-        <Route path="/button-builder" element={<ButtonBuilder />} />
+        <Route
+          path="/color-shades-generator"
+          element={<ColorShadesGenerator />}
+        />
+        {/* create an route for 404 page */}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

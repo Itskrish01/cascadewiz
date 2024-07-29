@@ -7,10 +7,21 @@ import { cursorClasses } from "@/data/classes";
 import { cn } from "@/lib/utils";
 import { Info } from "lucide-react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { Helmet } from "react-helmet";
 
 const CursorCSSGuide = () => {
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content="Cursor CSS Guide" />
+        <meta
+          property="og:description"
+          content="Learn how to use different cursor types in CSS"
+        />
+        <meta property="og:site_name" content="cascadeWiz" />
+        <meta name="twitter:url" content={window.location.href} />
+        <title>Cursor CSS Guide</title>
+      </Helmet>
       <h3 className="blueDark-text text-3xl font-semibold">CSS Cursor Guide</h3>
       <div className="mt-4 ">
         <p className="cursor-guide">

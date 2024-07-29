@@ -39,6 +39,12 @@ const tools = [
     href: "/css-box-shadow",
     icon: BoxSelect,
   },
+  {
+    name: "Color Shades Generator",
+    description: "Generate color shades from one color easily with this tool",
+    href: "/color-shades-generator",
+    icon: BoxSelect,
+  },
 ];
 
 const guides = [

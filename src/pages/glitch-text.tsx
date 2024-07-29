@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { Helmet } from "react-helmet";
 
 const GlitchTextEffect = () => {
   const [glitchedText, setGlitchedText] = useState("Amazing");
@@ -16,6 +17,17 @@ const GlitchTextEffect = () => {
 
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content=" Glitch Text Effect" />
+        <meta
+          property="og:description"
+          content="Generate a very cool glitch text effect with HTML and CSS"
+        />
+        <meta property="og:site_name" content="cascadeWiz" />
+
+        <meta name="twitter:url" content={window.location.href} />
+        <title>Glitch Text Effect</title>
+      </Helmet>
       <style
         dangerouslySetInnerHTML={{
           __html: `
