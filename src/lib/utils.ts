@@ -66,9 +66,9 @@ export const hslToHex = (h: number, s: number, l: number): string => {
   const c = (1 - Math.abs(2 * l - 1)) * s;
   const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
   const m = l - c / 2;
-  let r: number = 0,
-    g: number = 0,
-    b: number = 0;
+  let r: string | number = 0,
+    g: string | number = 0,
+    b: string | number = 0;
 
   if (0 <= h && h < 60) {
     r = c;
