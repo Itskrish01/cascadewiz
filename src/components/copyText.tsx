@@ -1,5 +1,5 @@
 import { CopyIcon } from "lucide-react";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 type Props = {
   text: string;

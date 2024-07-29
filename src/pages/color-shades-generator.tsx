@@ -5,7 +5,7 @@ import { hexToHSL, hexToRgb, hslToHex } from "@/lib/utils";
 import { Copy } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 
 const ColorShadesGenerator: React.FC = () => {
   const [mainColor, setMainColor] = useState<string>("#a92d2d");
