@@ -1,7 +1,7 @@
 import NavCard from "@/components/NavCard";
 import HeroSection from "@/sections/HeroSection";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
-import { BoxesIcon, BoxIcon, BoxSelect } from "lucide-react";
+import { BoxesIcon, BoxIcon, BoxSelect, BringToFront } from "lucide-react";
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
 
@@ -80,6 +80,12 @@ const Home = () => {
             description="Generate cool box shadow effects for your own websites or web apps"
             icon={<BoxSelect className="h-14 w-14 " />}
             href="/css-box-shadow"
+          />
+          <NavCard
+            name="Color Shades Generator"
+            description="Generate color shades from one color easily with this tool"
+            icon={<BringToFront className="h-14 w-14 " />}
+            href="/color-shades-generator"
           />
         </div>
       </div>

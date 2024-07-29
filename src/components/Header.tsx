@@ -7,7 +7,13 @@ import {
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { BoxesIcon, BoxIcon, BoxSelect, Text } from "lucide-react";
+import {
+  BoxesIcon,
+  BoxIcon,
+  BoxSelect,
+  BringToFront,
+  Text,
+} from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import {
   DropdownMenu,
@@ -43,7 +49,7 @@ const tools = [
     name: "Color Shades Generator",
     description: "Generate color shades from one color easily with this tool",
     href: "/color-shades-generator",
-    icon: BoxSelect,
+    icon: BringToFront,
   },
 ];
 
