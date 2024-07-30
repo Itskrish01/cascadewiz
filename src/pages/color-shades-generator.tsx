@@ -170,7 +170,7 @@ const ColorCard = (props: { color: string }) => {
           </div>
           <div>
             {" "}
-            <Label className="text-gray-400 font-light">RBG</Label>
+            <Label className="text-gray-400 font-light">RGB</Label>
             <CopyText text={finalRgb} />
           </div>
         </div>
