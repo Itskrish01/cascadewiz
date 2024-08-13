@@ -45,12 +45,6 @@ const Home = () => {
             href="/css-glassmorphism"
           />
           <NavCard
-            name="Flex Box Guide"
-            description="Learn how flex box works with its different properties, visually."
-            icon={<BoxesIcon className="h-14 w-14 " />}
-            href="/css-flexbox-guide"
-          />
-          <NavCard
             name="Glitch Text Effect"
             description="Generate a very cool glitch text effect with HTML and CSS"
             icon={
