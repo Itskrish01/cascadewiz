@@ -29,9 +29,12 @@ export default function FlexBoxGuide() {
         <meta name="twitter:url" content={window.location.href} />
         <title>Flex Box Guide</title>
       </Helmet>
-      <h3 className="blueDark-text text-3xl font-semibold">
-        Flexbox visual Guide
-      </h3>
+      <header className="border-b border-rule pb-10 mb-10">
+        <div className="eyebrow">G·01 ─ Visual Guide</div>
+        <h1 className="font-display text-6xl md:text-7xl tracking-tight mt-3 leading-none">
+          The <em className="italic text-accent">Flexbox</em> Guide
+        </h1>
+      </header>
       <div className="mt-16">
         <Label className="font-bold text-lg blueDark-text">
           Justify content

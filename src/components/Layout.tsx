@@ -5,10 +5,10 @@ import { Toaster } from "./ui/sonner";
 
 const Layout = () => {
   return (
-    <div className="">
+    <div className="min-h-screen flex flex-col">
       <Toaster />
       <Header />
-      <main className="container mx-auto max-w-7xl px-4 py-8">
+      <main className="container mx-auto max-w-7xl px-6 lg:px-10 py-10 flex-1">
         <Outlet />
       </main>
       <Footer />

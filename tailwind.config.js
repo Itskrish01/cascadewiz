@@ -18,6 +18,29 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Fraunces', 'Times New Roman', 'serif'],
+        sans: ['Inter Tight', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+      },
+      colors: {
+        paper: {
+          DEFAULT: '#ffffff',
+          deep: '#fafafa',
+          card: '#ffffff',
+        },
+        ink: {
+          DEFAULT: '#0a0a0a',
+          soft: '#2a2a2a',
+          muted: '#707070',
+        },
+        rule: '#e6e6e6',
+        accent: {
+          DEFAULT: '#0a0a0a',
+          deep: '#000000',
+        },
+        moss: '#2a2a2a',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

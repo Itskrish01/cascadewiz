@@ -125,7 +125,12 @@ const BoxShadowTool = () => {
         <meta property="og:title" content="CascadeWiz" />
       </Helmet>
       <style dangerouslySetInnerHTML={{ __html: activeShapeCssCode }} />
-      <h3 className="blueDark-text text-3xl font-semibold">CSS Box Shadow</h3>
+      <header className="border-b border-rule pb-10 mb-10">
+        <div className="eyebrow">T·03 ─ Studio</div>
+        <h1 className="font-display text-6xl md:text-7xl tracking-tight mt-3 leading-none">
+          Box <em className="italic text-accent">Shadow</em>
+        </h1>
+      </header>
       <div className="mt-16 flex md:flex-row flex-col gap-5 items-center">
         <div
           style={{ backgroundColor }}

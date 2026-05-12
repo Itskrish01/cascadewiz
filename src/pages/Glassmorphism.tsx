@@ -65,9 +65,12 @@ const Glassmorphism = () => {
         <meta name="twitter:url" content={window.location.href} />
         <title>Glassmorphism Tool</title>
       </Helmet>
-      <h3 className="blueDark-text text-3xl font-semibold">
-        Glassmorphism CSS
-      </h3>
+      <header className="border-b border-rule pb-10 mb-10">
+        <div className="eyebrow">T·01 ─ Studio</div>
+        <h1 className="font-display text-6xl md:text-7xl tracking-tight mt-3 leading-none">
+          <em className="italic text-accent">Glass</em>morphism
+        </h1>
+      </header>
       <div className="flex md:flex-row flex-col md:gap-10 mt-16 gap-5">
         <div className="flex-[0.5] h-full">
           <Preview

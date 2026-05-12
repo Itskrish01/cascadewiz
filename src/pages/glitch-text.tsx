@@ -106,9 +106,12 @@ const GlitchTextEffect = () => {
     `,
         }}
       ></style>
-      <h3 className="blueDark-text text-3xl font-semibold">
-        CSS Text Glitch Effect
-      </h3>
+      <header className="border-b border-rule pb-10 mb-10">
+        <div className="eyebrow">T·02 ─ Studio</div>
+        <h1 className="font-display text-6xl md:text-7xl tracking-tight mt-3 leading-none">
+          Glitch <em className="italic text-accent">Text</em>
+        </h1>
+      </header>
       <div className="flex items-center gap-3 mt-20 md:grid-cols-3">
         <div className="w-full">
           <div className="flex items-center gap-2 mb-2">

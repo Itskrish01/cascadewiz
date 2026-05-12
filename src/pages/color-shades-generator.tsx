@@ -53,9 +53,12 @@ const ColorShadesGenerator: React.FC = () => {
         <meta name="twitter:url" content={window.location.href} />
         <title>Color Shades Generator</title>
       </Helmet>
-      <h3 className="blueDark-text text-3xl font-semibold">
-        Color Shades Generator
-      </h3>
+      <header className="border-b border-rule pb-10 mb-10">
+        <div className="eyebrow">T·04 ─ Studio</div>
+        <h1 className="font-display text-6xl md:text-7xl tracking-tight mt-3 leading-none">
+          Color <em className="italic text-accent">Shades</em>
+        </h1>
+      </header>
       <div className="mt-16">
         <div className="flex items-center justify-between">
           <div>

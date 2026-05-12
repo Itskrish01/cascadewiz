@@ -1,28 +1,56 @@
-import { ArrowRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const NavCard = (item: {
+export interface NavCardProps {
   name: string;
   description: string;
-  icon: React.ReactNode;
   href: string;
-}) => {
+  index?: string;
+  category?: string;
+  preview?: React.ReactNode;
+}
+
+const NavCard = ({
+  name,
+  description,
+  href,
+  index = "00",
+  category = "Tool",
+  preview,
+}: NavCardProps) => {
   return (
     <Link
-      to={item.href}
-      className="overflow-hidden rounded-lg border transition-all duration-300 hover:shadow-lg shadow border-gray-100 group cursor-pointer"
+      to={href}
+      className="group relative flex flex-col bg-paper border border-rule hover:border-ink transition-colors"
     >
-      <div className=" border-b border-gray-900/5 bg-gray-50 p-6">
-        <div className="text-2xl group-hover:text-orange-500 text-gray-600 transition-all duration-300">
-          {item.icon}
+      {/* Preview area */}
+      <div className="aspect-[5/3] relative overflow-hidden border-b border-rule bg-paper-deep">
+        <div className="absolute inset-0 bg-grid-dots opacity-20" />
+        <div className="absolute inset-0 grid place-items-center transition-transform duration-500 group-hover:scale-[1.04]">
+          {preview}
         </div>
-        <div className="text-xl font-semibold leading-6 blurDark-text mt-2">
-          {item.name}
+        <div className="absolute top-3 left-3 font-mono-cw text-[10px] uppercase tracking-widest text-ink-muted">
+          {index}
         </div>
-        <p className="text-base text-gray-500 mt-2">{item.description}</p>
-        <div className="flex items-center mt-10 gap-3 group-hover:text-orange-500 transition-all duration-300">
+        <div className="absolute top-3 right-3 font-mono-cw text-[10px] uppercase tracking-widest text-ink-muted">
+          {category}
+        </div>
+      </div>
+
+      <div className="flex-1 p-5 flex flex-col">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-display text-xl tracking-tight leading-tight">
+            {name}
+          </h3>
+          <span className="font-mono-cw text-sm text-ink-muted group-hover:text-ink transition-colors translate-y-1">
+            →
+          </span>
+        </div>
+        <p className="text-sm text-ink-soft mt-2 leading-relaxed">
+          {description}
+        </p>
+        <div className="mt-5 pt-4 border-t border-rule flex items-center justify-between font-mono-cw text-[10px] uppercase tracking-widest text-ink-muted">
           <span>Open</span>
-          <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1" />
+          <span>↗</span>
         </div>
       </div>
     </Link>

@@ -1,20 +1,145 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@300..600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Space Grotesk", sans-serif;
+:root {
+  --paper: #ffffff;
+  --paper-2: #fafafa;
+  --paper-3: #f4f4f4;
+  --ink: #0a0a0a;
+  --ink-soft: #2a2a2a;
+  --ink-muted: #707070;
+  --rule: #e6e6e6;
+  --rule-strong: #cfcfcf;
+  --accent: #0a0a0a;
+  --accent-deep: #000000;
+  --moss: #2a2a2a;
 }
 
-.blueDark-text {
-  color: #24264b;
+* {
+  border-radius: 0 !important;
+}
+
+html,
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Recolor any leftover orange / blue utility usage from older pages */
+[class*="bg-orange-"] {
+  background-color: var(--ink) !important;
+  color: var(--paper) !important;
+}
+[class*="text-orange-"] {
+  color: var(--ink) !important;
+}
+[class*="border-orange-"],
+[class*="ring-orange-"] {
+  border-color: var(--ink) !important;
+}
+[class*="hover:bg-orange-"]:hover {
+  background-color: var(--ink-soft) !important;
+}
+
+.font-display {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+  letter-spacing: -0.025em;
+}
+
+.font-mono-cw {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.blueDark-text,
+.blurDark-text {
+  color: var(--ink);
+}
+
+.hr-rule {
+  border-color: var(--rule);
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.paper-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+
+/* Subtle gridlines used for SaaS feel */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(10, 10, 10, 0.18) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.bg-grid-lines {
+  background-image: linear-gradient(
+      to right,
+      var(--rule) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 .cursor-guide code {
-  font-size: 14px;
-  background-color: #f0f0f0;
-  padding: 2px 5px;
-  border-radius: 5px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  background-color: var(--paper-3);
+  border: 1px solid var(--rule);
+  padding: 2px 6px;
+  color: var(--ink);
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ticker { animation: ticker 50s linear infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+.drift { animation: drift 7s ease-in-out infinite; }
+
+/* Range input — monochrome */
+input[type="range"] {
+  accent-color: #0a0a0a;
 }
