@@ -10,7 +10,7 @@ export default function ClampCalculator() {
   const [unit, setUnit] = useState<"rem" | "px">("rem");
   const [previewVw, setPreviewVw] = useState(800);
 
-  const { slope, intercept, preferred, expression, livePx } = useMemo(() => {
+  const { slope, intercept, expression, livePx } = useMemo(() => {
     const slope = (maxSize - minSize) / (maxVw - minVw);
     const intercept = minSize - slope * minVw;
     const slopeVw = +(slope * 100).toFixed(4);
@@ -30,7 +30,7 @@ export default function ClampCalculator() {
     const raw = slope * previewVw + intercept;
     const livePx = Math.max(minSize, Math.min(maxSize, raw));
 
-    return { slope, intercept, preferred, expression, livePx };
+    return { slope, intercept, expression, livePx };
   }, [minVw, maxVw, minSize, maxSize, unit, previewVw]);
 
   const css = `:root {\n  --fluid-size: ${expression};\n}\n\n.headline {\n  font-size: ${expression};\n}`;
